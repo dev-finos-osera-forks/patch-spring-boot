@@ -1,6 +1,6 @@
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.7.18.1-osera-00040
+release: 2.7.18.1-osera-00041
 baseline: v2.7.18+patch.baseline
 fixes:
   - cve: CVE-2016-1000027
@@ -578,11 +578,16 @@ fixes:
     upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41696
     artifacts:
       - org.springframework.data:spring-data-mongodb
-    note: New in this release; ported onto 2.7.18; published to the Moderne Backpatch Alliance as 3.4.18.1-backpatch-00006 (backpatch-spring-data-mongodb@0c81183); the same bytes here.
+    note: Carried from 2.7.18.1-osera-00040; ported onto 2.7.18; published to the Moderne Backpatch Alliance as 3.4.18.1-backpatch-00006 (backpatch-spring-data-mongodb@0c81183); the same bytes here.
+  - cve: CVE-2026-47838
+    upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-47838
+    artifacts:
+      - org.springframework.security:spring-security-web
+    note: New in this release; ported onto 2.7.18; published to the Moderne Backpatch Alliance as 5.7.14.1-backpatch-00002 (backpatch-spring-security@9c75f2e..5d31dcc); the same bytes here.
 tests:
-  commit: 5741f0520e80e6321a889cced1dc72aa59940379
+  commit: 5e75187c9368fcd1b9b3966e547650bece3586a6
   command: none in this repository
   runtime: none, no build or test ran for this release
   report: carried, see the evidence of the release named in the note
   result: pass
-  note: this release changes only the versions this repository pins, nothing ran here. Its test provenance is the release it pins that carried the fix, the form REL-001.REQ-002 proposes with REL-009 (finos-osera/remediation-standards#67, pending adoption); result pass is that release's result. CVE-2026-41696 carried by dev-finos-osera-forks/patch-spring-data-mongodb at v3.4.18.1-osera-00006, whose .osera/patch-evidence.yaml records the tests that ran
+  note: this release changes only the versions this repository pins, nothing ran here. Its test provenance is the release it pins that carried the fix, the form REL-001.REQ-002 proposes with REL-009 (finos-osera/remediation-standards#67, pending adoption); result pass is that release's result. CVE-2026-47838 carried by dev-finos-osera-forks/patch-spring-security at v5.7.14.1-osera-00002, whose .osera/patch-evidence.yaml records the tests that ran
